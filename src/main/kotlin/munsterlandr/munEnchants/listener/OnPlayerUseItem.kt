@@ -15,11 +15,15 @@ import net.minecraft.world.explosion.Explosion
 
 object OnPlayerUseItem: UseItemCallback {
     override fun interact(player: PlayerEntity?, world: World?, hand: Hand?): TypedActionResult<ItemStack> {
-        if (player?.activeItem?.enchantments!!.contains(EnchantmentHelper.createNbt(Forbidden.ID, 1))) {
-            Explosion(player.world, player, player.x, player.y, player.z, 5.0.toFloat())
-            return TypedActionResult(ActionResult.SUCCESS, ItemStack.EMPTY)
-        } else {
-            return TypedActionResult.pass(ItemStack.EMPTY)
+        if (!player!!.isSpectator) {
+            for (item in player.itemsHand) {
+                for (enchant in item.enchantments) {
+                    if (enchant.asString() == EnchantmentHelper.createNbt(Forbidden.ID, 1).asString()) {
+                        Forbidden.explode(player)
+                    }
+                }
+            }
         }
+        return TypedActionResult.pass(ItemStack.EMPTY)
     }
 }

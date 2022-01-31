@@ -20,11 +20,15 @@ object OnPlayerBreakBlock: AttackBlockCallback {
         pos: BlockPos?,
         direction: Direction?
     ): ActionResult {
+        println(EnchantmentHelper.createNbt(Forbidden.ID, 1).asString())
         if (!player!!.isSpectator) {
             for (item in player!!.itemsHand) {
-                println(item)
-                if (item.enchantments.contains(EnchantmentHelper.createNbt(Forbidden.ID, 1))) {
-                    Explosion(world, player, player.x, player.y, player.z, 5.0.toFloat())
+                //println(item)
+                for (enchant in item.enchantments) {
+                    println(enchant.asString())
+                    if (enchant.asString() == EnchantmentHelper.createNbt(Forbidden.ID, 1).asString()) {
+                        Forbidden.explode(player)
+                    }
                 }
             }
         }

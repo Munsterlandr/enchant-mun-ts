@@ -20,6 +20,11 @@ class Forbidden: Enchantment(
         fun register() {
             Registry.register(Registry.ENCHANTMENT, ID, Forbidden())
         }
+
+        fun explode(user: LivingEntity?) {
+            user?.world!!.createExplosion(user, user.x, user.y, user.z, 5.0.toFloat(), true, Explosion.DestructionType.DESTROY)
+            user.health = 0.0.toFloat() // just in case
+        }
     }
 
     override fun isCursed(): Boolean {
@@ -44,8 +49,5 @@ class Forbidden: Enchantment(
 
 
 
-    fun explode(user: LivingEntity?) {
-        user?.world!!.createExplosion(user, user.x, user.y, user.z, 5.0.toFloat(), Explosion.DestructionType.DESTROY)
-        user.health = 0.0.toFloat() // just in case
-    }
+
 }
