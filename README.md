@@ -13,4 +13,4 @@ Makes mobs with custom heads have a 5% - 25% chance of dropping their head, 5 le
 Hides all enchants and curses on the weapon. Never the only curse on loot.
 
 4. Forbidden:
-Disappears and explodes on use. Curse.
+Explodes on use. Curse.
