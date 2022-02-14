@@ -18,5 +18,6 @@ object MunEnchants : ModInitializer {
 
         UseItemCallback.EVENT.register(OnPlayerUseItem)
         AttackBlockCallback.EVENT.register(OnPlayerBreakBlock)
+
     }
 }

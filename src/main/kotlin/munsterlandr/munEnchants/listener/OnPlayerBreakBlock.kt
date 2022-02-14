@@ -20,7 +20,7 @@ object OnPlayerBreakBlock: AttackBlockCallback {
         pos: BlockPos?,
         direction: Direction?
     ): ActionResult {
-        println(EnchantmentHelper.createNbt(Forbidden.ID, 1).asString())
+        //println(EnchantmentHelper.createNbt(Forbidden.ID, 1).asString())
         if (!player!!.isSpectator) {
             for (item in player!!.itemsHand) {
                 //println(item)
