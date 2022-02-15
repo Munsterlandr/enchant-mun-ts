@@ -16,11 +16,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ArmorFeatureRenderer.class)
 public class ArmorRenderMixin {
 
-    @Inject(method = "renderArmor", at = @At("HEAD"))
+    @Inject(method = "renderArmor", at = @At("HEAD"), cancellable = true)
     private void onRenderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers, LivingEntity entity, EquipmentSlot armorSlot, int light, BipedEntityModel model, CallbackInfo ci) {
         if ( entity.getEquippedStack(armorSlot).getEnchantments().contains(EnchantmentHelper.createNbt(Concealed.Companion.getID(), 1)) ) {
             System.out.println("a piece of armor should be concealed"); // debug
             model.setVisible(false);
+            ci.cancel(); // make it not render
         }
     }
 }
