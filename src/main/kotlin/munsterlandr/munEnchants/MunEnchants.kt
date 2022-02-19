@@ -1,5 +1,6 @@
 package munsterlandr.munEnchants
 
+import munsterlandr.munEnchants.enchantment.Beheading
 import munsterlandr.munEnchants.enchantment.Concealed
 import munsterlandr.munEnchants.enchantment.Forbidden
 import munsterlandr.munEnchants.listener.OnPlayerBreakBlock
@@ -15,6 +16,7 @@ object MunEnchants : ModInitializer {
     override fun onInitialize() {
         Concealed.register()
         Forbidden.register()
+        Beheading.register()
 
         UseItemCallback.EVENT.register(OnPlayerUseItem)
         AttackBlockCallback.EVENT.register(OnPlayerBreakBlock)
