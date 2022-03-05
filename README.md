@@ -1,4 +1,4 @@
-# Enchant-mun-ts
+# Unique enchants
 Adds some more enchantments to Minecraft.
 
 #### My plans include:
@@ -6,11 +6,8 @@ Adds some more enchantments to Minecraft.
 1. Concealing:
 A treasure enchant for armor that makes it not appear to other players.
 
-2. Beheading:
-Makes mobs with custom heads have a 5% - 25% chance of dropping their head, 5 levels.
-
-3. Curse of Secrecy:
-Hides all enchants and curses on the weapon. Never the only curse on loot.
-
-4. Forbidden:
+2. Forbidden:
 Explodes on use. Curse.
+
+3. Curse of Secrecy (not finished):
+   Hides all enchants and curses on the weapon. Never the only curse on loot.
