@@ -9,7 +9,7 @@ import net.fabricmc.fabric.api.event.player.AttackBlockCallback
 import net.fabricmc.fabric.api.event.player.UseItemCallback
 
 object MunEnchants : ModInitializer {
-    val MOD_ID = "mun_enchants"
+    val MOD_ID = "unique_enchants"
 
 
     override fun onInitialize() {
