@@ -9,5 +9,7 @@ pluginManagement {
         id("fabric-loom").version(loomVersion)
         val kotlinVersion: String by System.getProperties()
         kotlin("jvm").version(kotlinVersion)
+        val cursegradleVersion: String by settings
+        id("com.matthewprenger.cursegradle").version(cursegradleVersion)
     }
 }
